@@ -1,6 +1,6 @@
 /*File    	: boolean.h*/
 /*Deskripsi : Header fungsi boolean */
-/*Dibuat    : Aris Puji Widodo    (23501008)*/
+/*Dibuat    : Ibnu Farrel Athaillah Firdaus (24060125120022)*/
 /*Tanggal   : Thu 20 Sep 2001 09:33:24 AM JAVT*/
 
 /* Kamus */

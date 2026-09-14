@@ -75,17 +75,13 @@ void printStack (Tstack T){
 	{Proses: menampilkan elemen tak kosong T ke layar}  
 	{setiap elemen dipisah tanda titik koma } */
 void viewStack (Tstack T){
-    if (!isEmptyStack(T)) {
-        for (int i = 0; i <= T.top; i++) {
-            printf("%c", T.wadah[i]);
-            if (i > 1) {
-                printf(";");
-            }
-        }
-        printf("\n");
-    }
-    else {
+    if (isEmptyStack(T)) {
         printf("Stack kosong\n");
+    } else {
+        for (int i = 1; i <= T.top; i++) {
+            printf("%c", T.wadah[i]);
+            printf(";");        }
+        printf("\n");
     }
 }
 
@@ -125,7 +121,6 @@ void pushN (Tstack *T, int N){
     char E;
     for (int i = 1; i <= N; i++) {
         if (!isFullStack(*T)) {
-            printf("Masukkan karakter: ");
             scanf(" %c", &E);
             push(T, E);
         } else {

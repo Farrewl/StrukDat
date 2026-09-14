@@ -14,17 +14,16 @@ int main()
 	
 	/* algoritma */
 	createStack( &A );
-	
 	push(&A, 'A');
 	push(&A, 'B');
 	push(&A, 'C');
 	
 	viewStack(A);
-	
 	printStack(A);
 	
 	pop(&A, &X);
 	
+	pushN(&A, 4);
 	viewStack(A);
 	
 	char kata[30] = "katak";
