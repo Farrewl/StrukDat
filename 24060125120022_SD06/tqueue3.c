@@ -100,7 +100,6 @@ char infoTail3(tqueue3 Q){
 {mengembalikan panjang antrian Q} */
 int sizeQueue3(tqueue3 Q){
     // Kamus Lokal
-    int ukuran;
 
     // Algoritma
     if (isEmptyQueue3(Q)) {
@@ -110,10 +109,7 @@ int sizeQueue3(tqueue3 Q){
         return Q.tail - Q.head + 1;
     } 
     else {
-        // tail sudah memutar ke depan, head di belakang
-        // hitung dari head sampai 5, lalu dari 1 sampai tail
-        ukuran = (5 - Q.head + 1) + Q.tail;
-        return ukuran;
+        return (5 - Q.head + 1) + Q.tail;
     }
 }
 
@@ -139,21 +135,19 @@ void printQueue3(tqueue3 Q){
 void viewQueue3(tqueue3 Q){
     // Kamus Lokal
     int i;
-    int pos;
 
     // Algoritma
     if (isEmptyQueue3(Q)) {
-        printf("kosong\n");
+        printf("-\n");
     } 
     else {
-        pos = Q.head;
         for (i = 0; i < sizeQueue3(Q); i++) {
-            printf("%c ", Q.wadah[pos]);
-            if (pos == 5) {
-                pos = 1;
+            printf("%c ", Q.wadah[Q.head]);
+            if (Q.head == 5) {
+                Q.head = 1;
             } 
             else {
-                pos = pos + 1;
+                Q.head = Q.head + 1;
             }
         }
         printf("\n");
@@ -225,10 +219,5 @@ boolean isTailOverHead(tqueue3 Q){
     // Kamus Lokal
 
     // Algoritma
-    if (isEmptyQueue3(Q)) {
-        return false;
-    } 
-    else {
-        return Q.tail < Q.head;
-    }
+    return Q.tail < Q.head;
 }
