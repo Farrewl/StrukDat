@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include "tstack.h"
 #include "boolean.h"
-/* include tstack+boolean */
 
 /*procedure createStack( output T: Tstack)
 	{I.S.: -}
@@ -51,6 +50,8 @@ void pop (Tstack *T, char *X){
         *X = T->wadah[T->top];
         T->wadah[T->top] = '#';
         T->top = T->top - 1;
+    } else {
+        *X = '#';
     }
 }
 
@@ -75,12 +76,14 @@ void printStack (Tstack T){
 	{Proses: menampilkan elemen tak kosong T ke layar}  
 	{setiap elemen dipisah tanda titik koma } */
 void viewStack (Tstack T){
-    if (isEmptyStack(T)) {
-        printf("Stack kosong\n");
-    } else {
-        for (int i = 1; i <= T.top; i++) {
+    if (isEmptyStack(T)) printf("Stack kosong\n");
+    else {
+        for (int i = T.top; i >= 1; i--) {
             printf("%c", T.wadah[i]);
-            printf(";");        }
+            if (i > 1) {
+                printf(";");
+            }
+        }
         printf("\n");
     }
 }
@@ -94,15 +97,19 @@ boolean isPalindrom(char kata[30]){
     boolean sama = true;
     char X;
 
+    /* Hitung panjang string */
     while (kata[panjang] != '\0') {
         panjang++;
     }
 
     createStack(&T);
+
+    /* Push semua karakter ke stack */
     for (i = 0; i < panjang; i++) {
         push(&T, kata[i]);
     }
 
+    /* Pop trus bandingkan */
     for (i = 0; i < panjang; i++) {
         pop(&T, &X);
         if (kata[i] != X) {
@@ -123,8 +130,6 @@ void pushN (Tstack *T, int N){
         if (!isFullStack(*T)) {
             scanf(" %c", &E);
             push(T, E);
-        } else {
-            printf("Stack penuh\n");
         }
     }
 }
