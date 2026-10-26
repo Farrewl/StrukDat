@@ -36,7 +36,6 @@ int main(){
     printf("isFull=%d isOne=%d size=%d\n\n",
            isFullQueue3(Q), isOneElement3(Q), sizeQueue3(Q));
 
-    // coba enqueue saat penuh, harusnya tidak masuk
     enqueue3(&Q, 'F');
     viewQueue3(Q);
     printf("size=%d (tetap 5)\n\n", sizeQueue3(Q));
@@ -50,7 +49,6 @@ int main(){
     printf("head=%d tail=%d size=%d\n\n",
            head3(Q), tail3(Q), sizeQueue3(Q));
 
-    // uji head dan tail memutar searah jarum jam
     enqueue3(&Q, 'F');
     enqueue3(&Q, 'G');
     printQueue3(Q);

@@ -22,7 +22,7 @@ boolean isFullQueue3(tqueue3 Q){
     // Kamus Lokal
 
     // Algoritma
-    return sizeQueue3(Q) == 5;
+    return (Q.head != 0) && (((Q.tail % 5) + 1) == Q.head);
 }
 
 /*function isOneElement3(Q:tQueue3) -> boolean
@@ -109,7 +109,7 @@ int sizeQueue3(tqueue3 Q){
         return Q.tail - Q.head + 1;
     } 
     else {
-        return (5 - Q.head + 1) + Q.tail;
+        return ((Q.tail - Q.head + 5) % 5) + 1;
     }
 }
 
@@ -141,14 +141,8 @@ void viewQueue3(tqueue3 Q){
         printf("-\n");
     } 
     else {
-        for (i = 0; i < sizeQueue3(Q); i++) {
-            printf("%c ", Q.wadah[Q.head]);
-            if (Q.head == 5) {
-                Q.head = 1;
-            } 
-            else {
-                Q.head = Q.head + 1;
-            }
+        for (i = 0; i < ((Q.tail - Q.head + 5) % 5) + 1; i++) {
+            printf("%c ", Q.wadah[((Q.head - 1 + i) % 5) + 1]);
         }
         printf("\n");
     }
@@ -170,12 +164,7 @@ void enqueue3(tqueue3 *Q, char E){
         Q->tail = 1;
     } 
     else {
-        if (Q->tail == 5) {
-            Q->tail = 1;
-        } 
-        else {
-            Q->tail = Q->tail + 1;
-        }
+        Q->tail = (Q->tail % 5) + 1;
     }
     Q->wadah[Q->tail] = E;
 }
@@ -202,12 +191,7 @@ void dequeue3(tqueue3 *Q, char *E){
         } 
         else {
             Q->wadah[Q->head] = '#';
-            if (Q->head == 5) {
-                Q->head = 1;
-            } 
-            else {
-                Q->head = Q->head + 1;
-            }
+            Q->head = (Q->head % 5) + 1;
         }
     }
 }
