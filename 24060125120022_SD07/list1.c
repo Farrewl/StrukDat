@@ -232,13 +232,10 @@ int CountKonsonan(List1 L, infotype X) {
 	P = First(L);
 	while (P != NIL) {
 		//hanya huruf yang dihitung
-		if (((info(P) >= 'a') && (info(P) <= 'z')) ||
-		    ((info(P) >= 'A') && (info(P) <= 'Z'))) {
+		if (((info(P) >= 'a') && (info(P) <= 'z')) || ((info(P) >= 'A') && (info(P) <= 'Z'))) {
 			//huruf yang bukan vokal berarti konsonan
-			if ((info(P) != 'a') && (info(P) != 'e') && (info(P) != 'i') &&
-			    (info(P) != 'o') && (info(P) != 'u') &&
-			    (info(P) != 'A') && (info(P) != 'E') && (info(P) != 'I') &&
-			    (info(P) != 'O') && (info(P) != 'U')) {
+			if ((info(P) != 'a') && (info(P) != 'i') && (info(P) != 'u') && (info(P) != 'e') && (info(P) != 'o')  &&
+				(info(P) != 'A') && (info(P) != 'I') && (info(P) != 'U') && (info(P) != 'E') && (info(P) != 'O')) {
 				n = n + 1;
 			}
 		}
@@ -276,7 +273,8 @@ float FrekuensiX(List1 L, infotype X) {
 	banyak = CountX(L, X);
 	if (n == 0) {
 		return 0.0;
-	} else {
+	} 
+	else {
 		return (float) banyak / (float) n;
 	}
 }
@@ -331,7 +329,8 @@ void InsertVAfter(List1 *L, infotype V, infotype VA ) {
 	if (P != NIL) {
 		if (First(*L) == NIL) { //list kosong
 			First(*L) = P;
-		} else {
+		} 
+		else {
 			Q = First(*L);
 			while (Q != NIL && info(Q) != V) {
 				Q = next(Q);
