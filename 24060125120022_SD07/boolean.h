@@ -3,8 +3,8 @@
 /***********************************/
 /* Program   : boolean.h */
 /* Deskripsi : header file modul boolean */
-/* NIM/Nama  : */
-/* Tanggal   : */
+/* NIM & Nama : 24060125120022 - Ibnu Farrel Athaillah Firdaus*/
+/* Tanggal : 28 Oktober 2026 */
 /***********************************/
 
 //type boolean macro bahasa C, false=0, true=1 

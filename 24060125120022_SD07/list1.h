@@ -1,7 +1,7 @@
 /* File : list1.h */
 /* Deskripsi : definisi dan spesifikasi ADT list berkait dengan representasi fisik pointer */
-/* NIM & Nama : 24060125120022 Ibnu Farrel Athaillah Firdaus */
-/* Tanggal : 26 Oktober 2026 */
+/* NIM & Nama : 24060125120022 - Ibnu Farrel Athaillah Firdaus*/
+/* Tanggal : 28 Oktober 2026 */
 #ifndef list1_H
 #define list1_H
 #include "boolean.h"
@@ -92,7 +92,7 @@ void DeleteVLast(List1 *L, infotype *V);
 { I.S. L, X terdefinisi }
 { F.S. A berisi alamat elemen yang nilainya X.
 Proses: Mencari apakah ada elemen list dengan info(P)= X. Jika ada, mengisi A dengan address elemen tersebut. Jika tidak ada, A=Nil }*/
-void SearchX(List1 L, infotype X, address A);
+void SearchX(List1 L, infotype X, address *A);
 
 /*** MANIPULASI ELEMEN LIST ***/
 /*Procedure UpdateX(input/output L:List1, input X:infotype, input Y:infotype)
