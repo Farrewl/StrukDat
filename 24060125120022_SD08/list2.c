@@ -297,7 +297,6 @@ void DeleteX(List2 *L, infotype X) {
         if (Ketemu) {
             if (IsOneElm(*L)) {
                 First(*L) = NIL;
-                Dealokasi(&P);
             } 
             else if (P == First(*L)) {
                 Akhir = First(*L);
@@ -306,12 +305,11 @@ void DeleteX(List2 *L, infotype X) {
                 }
                 First(*L) = next(P);
                 next(Akhir) = First(*L);
-                Dealokasi(&P);
             } 
             else {
                 next(Seb) = next(P);
-                Dealokasi(&P);
             }
+            Dealokasi(&P);
         }
     }
 }
