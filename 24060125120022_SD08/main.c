@@ -25,6 +25,7 @@ int main()
     /* 2. Insert elemen pertama */
     InsertVFirst(&L, 'A');
     printf("List setelah InsertVFirst('A'): ");
+    printf("\n");
     PrintList(L);
     printf("\nIsEmptyList: %s\n", IsEmptyList(L) ? "true" : "false");
     printf("IsOneElm: %s\n", IsOneElm(L) ? "true" : "false");
@@ -33,12 +34,14 @@ int main()
     /* 3. Insert elemen terakhir */
     InsertVLast(&L, 'C');
     printf("List setelah InsertVLast('C'): ");
+    printf("\n");
     PrintList(L);
     printf("\nNbElm: %d\n", NbElm(L));
     
     /* 4. Insert elemen di tengah */
     InsertVFirst(&L, 'B');
     printf("List setelah InsertVFirst('B'): ");
+    printf("\n");
     PrintList(L);
     printf("\nNbElm: %d\n", NbElm(L));
     
@@ -59,23 +62,27 @@ int main()
     
     /* 6. Uji UpdateX */
     UpdateX(&L, 'C', 'D');
-    printf("List setelah UpdateX('C', 'D'): ");
+    printf("List setelah UpdateX('C', 'D'): \n");
     PrintList(L);
+    printf("\n");
     
     /* 7. Uji Invers */
     Invers(&L);
-    printf("List setelah Invers: ");
+    printf("List setelah Invers: \n");
     PrintList(L);
+    printf("\n");
     
     /* 8. Uji penghapusan */
     infotype V;
     DeleteVFirst(&L, &V);
-    printf("List setelah DeleteVFirst (Dihapus: %c): ", V);
+    printf("List setelah DeleteVFirst (Dihapus: %c): \n", V);
     PrintList(L);
+    printf("\n");
     
     DeleteVLast(&L, &V);
-    printf("List setelah DeleteVLast (Dihapus: %c): ", V);
+    printf("List setelah DeleteVLast (Dihapus: %c): \n", V);
     PrintList(L);
+    printf("\n");
     
     /* 9. Uji CountX */
     int countA = CountX(L, 'A');
