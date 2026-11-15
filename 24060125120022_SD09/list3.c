@@ -507,16 +507,24 @@ void SearchAllX(List3 L, infotype X) {
 { Proses: Semua elemen bernilai X dihapus, dan didealokasi. }*/
 void DeleteAllX(List3 *L, infotype X) {
     /* Kamus Lokal */
-    address P;
+    address P, Next;
     /* Algoritma */
-    if (!IsEmptyList(*L)) {
-        P = First(*L);
-        while (P != NIL) {
-            if (info(P) == X) {
-                DeleteX(L, X);
+    P = First(*L);
+    while (P != NIL) {
+        Next = next(P);              /* simpan Next SEBELUM P dihapus */
+        if (info(P) == X) {
+            if (prev(P) == NIL) {    /* P elemen pertama */
+                First(*L) = Next;
             }
-            P = next(P);
+            else {
+                next(prev(P)) = Next;
+            }
+            if (Next != NIL) {
+                prev(Next) = prev(P);
+            }
+            Dealokasi(&P);
         }
+        P = Next;
     }
 }
 
