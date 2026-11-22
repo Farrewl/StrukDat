@@ -456,7 +456,8 @@ void InsertVBeforeX(List2 *L, infotype X, infotype V) {
     if (Pt != NIL) {
         if (Pt == First(*L)) {
             InsertVFirst(L, V);
-        } else {
+        } 
+        else {
             Seb = First(*L);
             while (next(Seb) != Pt) {
                 Seb = next(Seb);
